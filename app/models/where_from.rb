@@ -1,0 +1,2 @@
+class WhereFrom < ApplicationRecord
+end

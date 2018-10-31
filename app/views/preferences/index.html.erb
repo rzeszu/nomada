@@ -1,0 +1,39 @@
+<div class="flex mx-4 my-6">
+  <div class="flex-1 mb-4">
+    <h1 class="text-2xl mb-1 font-normal">
+      Materiały
+    </h1>
+  </div>
+  <div class="flex-1 mb-4">
+    <div class="inline-flex flex-row">
+      <div class="flex-1 ml-2">
+        <h1 class="text-2xl mr-2 font-normal">
+          Skąd?
+        </h1>
+      </div>
+      <div class="flex-1 self-center">
+        <%= link_to "Dodaj", new_where_from_path, class: "bg-green-light hover:bg-green-dark text-white hover:text-white px-2 py-1 text-sm" %>
+      </div>
+    </div>
+    <table class="w-full mt-4">
+      <thead>
+        <th class="font-normal border-b p-2 text-sm text-left">
+          Nazwa
+        </th>
+        <th class="font-normal border-b p-2 text-sm text-right">
+        </th>
+      </thead>
+      <tbody>
+        <% @countries.each do |country| %>
+          <tr class="hover:bg-grey-lightest">
+            <td class="border-b p-2 text-sm"><%= country.name %></td>
+            <td class="border-b p-2 text-sm text-right">
+              <%= link_to 'Edytuj', edit_where_from_path(country), class: "bg-grey-lighter hover:bg-grey-light px-2 py-1" %>
+              <%= link_to 'Usuń', country, method: :delete, class: "bg-red hover:bg-red-dark text-white hover:text-white px-2 py-1", data: { confirm: 'Ar ju siur?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

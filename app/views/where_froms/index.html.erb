@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Where Froms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @where_froms.each do |where_from| %>
+      <tr>
+        <td><%= where_from.name %></td>
+        <td><%= link_to 'Show', where_from %></td>
+        <td><%= link_to 'Edit', edit_where_from_path(where_from) %></td>
+        <td><%= link_to 'Destroy', where_from, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Where From', new_where_from_path %>
