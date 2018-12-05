@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = true
+  config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -9,11 +9,16 @@ config.webpacker.check_yarn_integrity = true
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Trzymaj pliki lokalnie
+  config.active_storage.service = :local
+
   # Do not eager load code on boot.
   config.eager_load = false
 
   # Show full error reports.
   config.consider_all_requests_local = true
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -28,7 +33,7 @@ config.webpacker.check_yarn_integrity = true
 
     config.cache_store = :null_store
   end
-
+  
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

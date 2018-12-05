@@ -62,7 +62,7 @@ let colors = {
   'red': '#e3342f',
   'red-light': '#ef5753',
   'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
+  'red-lightest': '#fcf1f0',
 
   'orange-darkest': '#462a16',
   'orange-darker': '#613b1f',
@@ -167,8 +167,8 @@ module.exports = {
   */
 
   screens: {
-    'sm': '576px',
-    'md': '768px',
+    'sm': '375px',
+    'md': '668px',
     'lg': '992px',
     'xl': '1200px',
   },

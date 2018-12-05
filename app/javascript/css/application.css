@@ -61,8 +61,12 @@
   * @import "utilities/skew-transforms";
   */
  
+  * {
+    box-shadow: none !important;
+  }
+
   html {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 300;
   }
 
@@ -75,6 +79,12 @@
 
   a:hover {
       color: inherit;
+  }
+
+  input[type=text] {
+    -webkit-appearance: none !important;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .title {
@@ -95,10 +105,28 @@
   }
 
   img.blurred {
-    transition: transform .4s;
-    transform: scale(1.1);
+    transition: transform .3s;
+    transform: scale(1.03);
   }
   
   img.blurred:hover {
-    transform: scale(1.2);
+    transform: scale(1.16);
+  }
+
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    width: 300px;
+    height: 300px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .slide {
+    width: 300px;
+    height: 100%;
+  }
+
+  img.grey {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%) brightness(150%);
   }

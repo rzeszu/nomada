@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  mount_uploaders :images, ImageUploader
-  has_many :categories
+  has_one_attached :file
+  has_one_attached :file_2
 end

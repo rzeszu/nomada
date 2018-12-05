@@ -1,10 +1,11 @@
-<div class="flex my-6 mx-4">
-  <h1 class="text-2xl mb-1 font-normal">Edytuj - <%= @product.name %></h1>
-</div>
+<div class="border-t">
+  <div class="container mx-auto sm:px-2 md:px-6 md:py-10">
+    <div class="flex">
+      <h1 class="text-2xl mb-6 font-normal">Edytuj - <%= @product.name %></h1>
+    </div>
 
-<div class="mx-4">
-  <%= render 'form', product: @product %>
+    <div class="">
+      <%= render 'form', product: @product %>
+    </div>
+  </div>
 </div>
-
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
