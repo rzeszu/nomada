@@ -2,46 +2,47 @@
   <div class="container mx-auto sm:px-6 sm:py-6 md:px-16 md:py-8">
   
     <% if notice || alert %>
-      <div class="bg-red-lightest text-red-dark mb-4 px-4 py-4 relative" role="alert">
+      <div class="bg-red-lightest text-red-dark mb-6 px-4 py-4 relative" role="alert">
         <strong class="font-normal">Kurczaki!</strong>
         <span class="block sm:inline"><%= notice %> <%= alert %></span>
       </div>
     <% end %>
+    <div class="px-4">
+      <h2 class="text-2xl mb-4 font-normal">Logowanie</h2>
 
-    <h2 class="text-2xl mb-4 font-normal">Logowanie</h2>
+      <p class="mb-4 text-sm text-grey-dark">
+        Jeżeli jesteś adminem to jedziesz z logowaniem.<br/>W innym wypadku spadaj na zakupsy.
+      </p>
 
-    <p class="mb-4 text-sm text-grey-dark">
-      Jeżeli jesteś adminem to jedziesz z logowaniem.<br/>W innym wypadku spadaj na zakupsy.
-    </p>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field mb-3">
-        <label class="block text-sm mb-2">
-          E-mail
-        </label>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-grey-light bg-white text-black inline-block sm:w-full md:w-1/2 lg:w-1/3 rounded py-3 px-4" %>
-      </div>
-
-      <div class="field mb-3">
-        <label class="block text-sm mb-2">
-          Hasło
-        </label>
-        <%= f.password_field :password, autocomplete: "current-password", class: "border border-grey-light bg-white text-black inline-block sm:w-full md:w-1/2 lg:w-1/3 rounded py-3 px-4" %>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <label class="text-sm ml-1">Zapamiętaj</label>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field mb-3">
+          <label class="block text-sm mb-2">
+            E-mail
+          </label>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-grey-light bg-white text-black inline-block sm:w-full md:w-1/2 lg:w-1/3 rounded py-3 px-4" %>
         </div>
-      <% end -%>
 
-      <div class="actions">
-        <%= f.submit "Zaloguj", class: "btn bg-green-light my-4 px-4 py-3 text-white hover:bg-green hover:text-white cursor-pointer" %>
-      </div>
-    <% end %>
+        <div class="field mb-3">
+          <label class="block text-sm mb-2">
+            Hasło
+          </label>
+          <%= f.password_field :password, autocomplete: "current-password", class: "border border-grey-light bg-white text-black inline-block sm:w-full md:w-1/2 lg:w-1/3 rounded py-3 px-4" %>
+        </div>
 
-    <%= render "admins/shared/links" %>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <label class="text-sm ml-1">Zapamiętaj</label>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Zaloguj", class: "btn bg-green-light my-4 px-4 py-3 text-white hover:bg-green hover:text-white cursor-pointer" %>
+        </div>
+      <% end %>
+
+      <%= render "admins/shared/links" %>
+    </div>
 
   </div>
 </div>

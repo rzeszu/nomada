@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, :except => [:show, :index]
 
   # GET /products
   # GET /products.json
   def index
     if params[:show]
-      @products = Product.all.select { |e| e.category.include? params[:show].to_i }.paginate(:page => params[:page], :per_page => 3)
+      @products = Product.all.select { |e| e.category.include? params[:show].to_i }.paginate(:page => params[:page], :per_page => 9)
     else
-      @products = Product.all.paginate(:page => params[:page], :per_page => 3)
+      @products = Product.all.paginate(:page => params[:page], :per_page => 9)
     end
   end
 

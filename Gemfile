@@ -28,6 +28,8 @@ gem "mini_magick"
 gem "table_print"
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
+gem 'mail_form'
+gem 'yaml_db'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -19,8 +19,9 @@ $(document).on "turbolinks:load", ->
   $('.file').on "click", (event) ->
     child = this.firstElementChild.src
     parent = document.getElementById("big")
+    $(parent).attr 'src', child
 
-    $(parent).fadeOut(200, ->
-      $(parent).attr 'src', child
-      return
-    ).fadeIn 400
+  setTimeout (->
+    $('#noticed').hide()
+    return
+  ), 4000

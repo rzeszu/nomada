@@ -9,14 +9,40 @@
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   </head>
 
   <body class="font-body leading-tight">
+    <!-- PANEL ADMINA -->
+    <% if admin_signed_in? %>
+    <div class="border-b bg-grey-lightest">
+      <div class="flex container mx-auto text-center py-4 font-normal md:justify-center">
+        <div class="w-1/6 text-left sm:hidden"></div>
+        <div class="sm:w-full md:w-2/3 self-center text-center">
+          <%= link_to new_product_path, class: "inline-block px-3 py-2 mx-1 text-sm text-white bg-green rounded hover:text-white hover:bg-green-light" do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+          <a href="#" class="inline-block px-3 py-2 mx-1 text-sm text-white bg-blue rounded hover:text-white hover:bg-blue-light">
+            <i class="fas fa-clipboard-list"></i>
+          </a>
+          <a href="#" class="inline-block px-3 py-2 mx-1 text-sm text-white bg-pink rounded hover:text-white hover:bg-pink-light">
+            <i class="fas fa-book"></i>
+          </a>
+          <%= link_to destroy_user_session_path, method: :delete, class: "inline-block px-3 py-2 mx-1 text-sm text-white bg-red rounded md:mt-0 hover:text-white hover:bg-red-light" do %>
+            <i class="fas fa-sign-out-alt"></i>
+          <% end %>
+        </div>
+        <div class="w-1/6 text-right sm:hidden"></div>
+      </div>
+    </div>
+    <% end %>
+    <!-- LOGO -->
     <div class="sm:block md:hidden justify-center text-center my-4">
       <%= image_tag "aura.jpg", class: "w-24" %>
     </div>
-    
-    <header class="bg-white sm:border-t sm:border-b md:border-t-0 md:border-b-0">
+    <%= session.id %>
+    <!-- MENU -->
+    <header class="bg-white sm:border-t md:border-t-0 md:border-b-1 md:border-dotted">
       <div class="container mx-auto px-6">
         <nav class="flex sm:py-4 md:py-8 justify-center bg-white uppercase">
           <div class="md:w-1/3 md:text-right self-center">
@@ -29,14 +55,23 @@
           </div>
           <div class="md:w-1/3 self-center">
             <%= link_to "O nas", products_path, class: "inline-block sm:mr-6 md:mr-10" %>
-            <%= link_to "Kontakt", preferences_path, class: "inline-block" %>
+            <%= link_to "Kontakt", pages_contact_path, class: "inline-block" + cp("pages") %>
           </div>
         </nav>
       </div>
     </header>
-      <% if admin_signed_in? %>
-        <%= link_to('Wyloguj', destroy_user_session_path, method: :delete) %>
-      <% end %>
-      <%= yield %>
+    <!-- POWIADOMIENIA -->
+    <% if notice %>
+    <div class="flex fixed pin-t pin-l w-full margin-t-10 p-6 z-50" id="noticed">
+      <div class="container mx-auto sm:px-2 md:px-10 bg-green-lightest p-6 rounded">
+        <p class="w-full" id="notice">
+          <%= notice %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+
+    <%= yield %>
+    
   </body>
 </html>
