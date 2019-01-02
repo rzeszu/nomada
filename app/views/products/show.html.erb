@@ -3,24 +3,24 @@
     <div class="sm:w-full md:w-1/2 p-6">
       <div class="big-thumb">
         <% if @product.file.attached? %>
-          <%= image_tag @product.file.variant(resize: "1024x1024!"), id: "big" %>
+          <%= image_tag @product.file, id: "big" %>
         <% end %>
       </div>
       <div class="flex mt-1">
         <% if @product.file.attached? %>
           <div class="w-1/5 mr-2 file">
-            <%= image_tag @product.file.variant(resize: "1024x1024!"), class: "cursor-pointer" %>
+            <%= image_tag @product.file, class: "cursor-pointer" %>
           </div>
         <% end %>
         <% if @product.file_2.attached? %>
           <div class="w-1/5 mr-2 file">
-            <%= image_tag @product.file_2.variant(resize: "1024x1024!"), class: "cursor-pointer" %>
+            <%= image_tag @product.file_2, class: "cursor-pointer" %>
           </div>
         <% end %>
       </div>
     </div>
     <div class="sm:w-full md:w-1/2 sm:px-4 md:p-6">
-      <h1 class="text-2xl mb-1 font-normal">
+      <h1 class="text-2xl mb-1 font-medium">
         <%= @product.name %>
       </h1>
 
@@ -28,7 +28,7 @@
         <%= @product.price %> zł
       </p>
 
-      <%= simple_format(@product.description, class: "my-3 py-5 border-t border-b") %>
+      <%= simple_format(@product.description, class: "my-4 py-5 border-t border-b leading-normal") %>
 
       <% if @product.where_from.present? %>
       <p class="py-1 text-sm">
@@ -42,7 +42,7 @@
         <span class="block uppercase mb-1">Materiał</span>
         <% @product.material.each do |material| %>
           <% if material != @product.material.last %>
-            <%= Material.find(material).name %>, 
+            <%= Material.find(material).name %>,
           <% else %>
             <%= Material.find(material).name %>
           <% end %>
@@ -55,16 +55,16 @@
         <span class="block uppercase mb-1">Kolor</span>
         <% @product.color.each do |color| %>
           <% if color != @product.color.last %>
-            <%= Color.find(color).name %>, 
+            <%= Color.find(color).name %>,
           <% else %>
             <%= Color.find(color).name %>
           <% end %>
         <% end %>
       </p>
       <% end %>
-      
+
       <div class="mt-8">
-        <a href="#" class="btn bg-green-light my-4 p-4 text-white hover:bg-green hover:text-white">
+        <a href="#" class="btn bg-green-light my-4 p-4 text-white font-medium hover:bg-green hover:text-white">
           Dodaj do koszyka
         </a>
         <%= link_to edit_product_path(@product), class: "bg-grey-lighter ml-2 p-2 rounded text-grey-darker hover:bg-grey-light" do %>

@@ -9,9 +9,9 @@ module ApplicationHelper
 
   def active(path)
     if params[:show].to_i == path
-      "font-normal bg-grey-light "
+      "font-medium bg-grey-light "
     else
-      "font-light bg-grey-lighter text-grey-dark "
+      "font-medium bg-grey-lighter text-grey-dark "
     end
   end
 end

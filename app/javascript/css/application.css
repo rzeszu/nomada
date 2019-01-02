@@ -19,7 +19,7 @@
   * @import "tailwindcss/components";
   */
  @tailwind components;
- 
+
  /**
   * Here you would add any of your custom component classes; stuff that you'd
   * want loaded *before* the utilities so that the utilities could still
@@ -35,7 +35,7 @@
   * @import "components/buttons";
   * @import "components/forms";
   */
- 
+
  /**
   * This injects all of Tailwind's utility classes, generated based on your
   * config file.
@@ -45,7 +45,7 @@
   * @import "tailwindcss/utilities";
   */
  @tailwind utilities;
- 
+
  /**
   * Here you would add any custom utilities you need that don't come out of the
   * box with Tailwind.
@@ -61,26 +61,13 @@
   * @import "utilities/skew-transforms";
   */
 
-  .bg-contact {
-    background: url('../../assets/images/contact.jpg') no-repeat center top;
-    height: 600px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  .contacted {
-    background-color: rgb(255, 255, 255, 0.7);
-  }
- 
   * {
     box-shadow: none !important;
   }
 
   html {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
   }
 
   a {
@@ -98,6 +85,10 @@
     -webkit-appearance: none !important;
     -moz-appearance: none;
     appearance: none;
+  }
+
+  label {
+    font-weight: 500;
   }
 
   .title {
@@ -121,7 +112,7 @@
     transition: transform .3s;
     transform: scale(1.03);
   }
-  
+
   img.blurred:hover {
     transform: scale(1.11);
   }
@@ -133,7 +124,7 @@
     height: 300px;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .slide {
     width: 300px;
     height: 100%;
@@ -142,10 +133,6 @@
   img.grey {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%) brightness(150%);
-  }
-
-  .text-moj-1 {
-    color: #8e8076;
   }
 
   .big-thumb {
@@ -167,4 +154,17 @@
 
   #noticed {
     display: hidden !important;
+  }
+
+  .bg-contact {
+    background: url('../../assets/images/contact.jpg') no-repeat center top;
+    height: 600px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .contacted {
+    background-color: rgb(255, 255, 255, 0.7);
   }

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   get 'pages/contact' => 'pages#contact'
   devise_for :admins, path: 'admins'
   devise_for :users, path: 'users'

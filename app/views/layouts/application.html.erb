@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   </head>
 
@@ -40,22 +40,23 @@
     <div class="sm:block md:hidden justify-center text-center my-4">
       <%= image_tag "aura.jpg", class: "w-24" %>
     </div>
-    <%= session.id %>
     <!-- MENU -->
-    <header class="bg-white sm:border-t md:border-t-0 md:border-b-1 md:border-dotted">
+    <header class="bg-white sm:border-t md:border-t-0 md:border-b">
       <div class="container mx-auto px-6">
-        <nav class="flex sm:py-4 md:py-8 justify-center bg-white uppercase">
+        <nav class="flex sm:py-4 md:py-8 justify-center font-normal bg-white uppercase">
           <div class="md:w-1/3 md:text-right self-center">
-            <%= link_to "Sklep", products_path, class: "inline-block sm:mr-6 md:mr-10" + cp("products") %>
+            <%= link_to "Sklep", products_path, class: "inline-block font-medium sm:mr-6 md:mr-12" %>
             <%= link_to "Jurta", products_path, class: "inline-block sm:mr-6 md:mr-0" %></div>
           <div>
             <a href="#" class="sm:hidden md:block self-center">
-              <%= image_tag "aura.jpg", class: "w-24 md:mx-8 text-center" %>
+              <%= link_to posts_path do %>
+                <%= image_tag "aura.jpg", class: "w-24 md:mx-12 text-center" %>
+              <% end %>
             </a>
           </div>
           <div class="md:w-1/3 self-center">
-            <%= link_to "O nas", products_path, class: "inline-block sm:mr-6 md:mr-10" %>
-            <%= link_to "Kontakt", pages_contact_path, class: "inline-block" + cp("pages") %>
+            <%= link_to "O nas", products_path, class: "inline-block sm:mr-6 md:mr-12" %>
+            <%= link_to "Kontakt", pages_contact_path, class: "inline-block" %>
           </div>
         </nav>
       </div>
@@ -72,6 +73,6 @@
     <% end %>
 
     <%= yield %>
-    
+
   </body>
 </html>

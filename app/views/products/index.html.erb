@@ -1,8 +1,9 @@
 <div class="container mx-auto sm:px-2 md:px-6">
   <!-- NAPIS -->
-  <div class="mt-4 mx-4 text-center">
-    
-    <h1 class="block text-3xl mb-6 font-normal text-center">
+  <div class="mt-12 mx-4 text-center">
+    <div class="inline-block w-6 h-1 bg-logo-cyan"></div>
+    <div class="inline-block w-6 h-1 bg-logo-orange"></div>
+    <h1 class="block text-4xl mt-3 mb-6 font-medium text-center">
       Wszystkie
       <% if params[:show].to_i == 0 %>produkty<% end %>
       <% if params[:show].to_i == 1 %>ciuchy<% end %>
@@ -16,7 +17,7 @@
     </p>
   </div>
   <!-- TAGI -->
-  <div class="flex flex-wrap mt-6 sm:mb-6 md:mb-12 mx-4 justify-center">
+  <div class="flex flex-wrap sm:mt-6 sm:mb-6 md:mt-8 md:mb-12 mx-4 justify-center">
     <%= link_to products_path, class: active(0) + "inline-block px-4 py-3 mx-1 mb-2 hover:bg-grey-light" do %>
       Wszystkie
     <% end %>
@@ -40,14 +41,14 @@
         <% if product.file.attached? %>
           <%= link_to product_path(product.id) do %>
             <% if product.available == true %>
-              <%= image_tag product.file.variant(resize: "720x720"), class: "blurred" %>
+              <%= image_tag product.file, class: "blurred" %>
             <% else %>
               <%= image_tag product.file, class: "blurred grey" %>
             <% end %>
           <% end %>
         <% end %>
         </div>
-        <p class="text-center pt-4 pb-2 text-xl">
+        <p class="text-center font-medium pt-4 pb-2 text-xl">
           <%= link_to product_path(product.id) do %>
             <%= product.name %>
           <% end %>
