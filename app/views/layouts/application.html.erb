@@ -25,9 +25,9 @@
           <a href="#" class="inline-block px-3 py-2 mx-1 text-sm text-white bg-blue rounded hover:text-white hover:bg-blue-light">
             <i class="fas fa-clipboard-list"></i>
           </a>
-          <a href="#" class="inline-block px-3 py-2 mx-1 text-sm text-white bg-pink rounded hover:text-white hover:bg-pink-light">
+          <%= link_to manage_index_path, class: "inline-block px-3 py-2 mx-1 text-sm text-white bg-pink rounded hover:text-white hover:bg-pink-light" do %>
             <i class="fas fa-book"></i>
-          </a>
+          <% end %>
           <%= link_to destroy_user_session_path, method: :delete, class: "inline-block px-3 py-2 mx-1 text-sm text-white bg-red rounded md:mt-0 hover:text-white hover:bg-red-light" do %>
             <i class="fas fa-sign-out-alt"></i>
           <% end %>
