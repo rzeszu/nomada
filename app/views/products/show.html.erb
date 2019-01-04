@@ -1,4 +1,4 @@
-<div class="container mx-auto sm:px-2 md:px-10 py-4">
+<div class="container mx-auto mt-2 sm:px-2 md:px-10 py-4">
   <div class="flex sm:flex-col md:flex-row">
     <div class="sm:w-full md:w-1/2 p-6">
       <div class="big-thumb">
@@ -6,7 +6,7 @@
           <%= image_tag @product.file, id: "big" %>
         <% end %>
       </div>
-      <div class="flex mt-1">
+      <div class="flex mt-2">
         <% if @product.file.attached? %>
           <div class="w-1/5 mr-2 file">
             <%= image_tag @product.file, class: "cursor-pointer" %>

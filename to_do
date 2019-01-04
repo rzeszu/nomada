@@ -6,12 +6,23 @@ Panel Admina // finish
 
 THATS ALL
 
+--> PRODUCT PAGE <--
+
 address id = 1110 + product_id 10min
 1113-Ponczo-Katana 10min
 
 
-ADMIN PAGE
-Produkty - manage/products
-Zamowienia - manage/orders
-Slowniki - manage/fields
+--> ADMIN PAGE <--
 
+Produkty - manage/products
+  -> Lista w formie tabeli
+Zamowienia - manage/orders
+  -> Lista
+  -> Statusy
+Slowniki - manage/fields
+  -> Zarządzanie
+
+--> BLOG <--
+
+CKEditor
+Galeria
