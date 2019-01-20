@@ -5,7 +5,7 @@
       <ul>
       <% product.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+      <% end %>[]
       </ul>
     </div>
   <% end %>
@@ -90,7 +90,7 @@
   <% end %>
 
   <div class="field mb-4">
-    <%= form.label "Zdjęcie główne" %>
+    <%= form.label "Zdjęcie główne", class: "block mb-2" %>
     <%= form.file_field :file %>
   </div>
 
@@ -100,12 +100,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Zdjęcie drugie" %>
+  <div class="field mb-4">
+    <%= form.label "Zdjęcie nr 2", class: "block mb-2" %>
     <%= form.file_field :file_2 %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Zapisz", class: "btn bg-green-light my-4 px-4 py-3 text-white hover:bg-green hover:text-white cursor-pointer" %>
+    <%= form.submit "Zapisz", class: "btn bg-green-light my-4 px-4 py-3 font-medium text-white hover:bg-green hover:text-white cursor-pointer" %>
   </div>
 <% end %>

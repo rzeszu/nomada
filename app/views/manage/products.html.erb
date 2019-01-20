@@ -10,4 +10,35 @@
       <i class="fas fa-undo mr-1"></i> Wróć
     <% end %>
   </div>
+  <!-- LISTA -->
+  <div class="mt-12">
+    <table class="w-full">
+      <thead class="text-left">
+        <tr>
+          <th class="pb-4 w-8">#</th>
+          <th class="w-12 pb-4">Zdjęcie</th>
+          <th class="w-64 pl-4 pb-4">Nazwa</th>
+          <th class="w-8 pl-4 pb-4">Ilość</th>
+          <th class="pl-4 pb-4">Cena</th>
+        </tr>
+      </thead>
+      <tbody class="text-left">
+        <% @products.each do |product| %>
+        <tr>
+          <td class="border-b w-8 py-2">
+            <% if product.available %>
+              <div class="w-4 h-4 rounded-full bg-green"></div>
+            <% else %>
+              <div class="w-4 h-4 rounded-full bg-red"></div>
+            <% end %>
+          </td>
+          <td class="w-12 py-2 border-b"><%= image_tag product.file, class: "w-12 h-12" %></td>
+          <td class="w-64 pl-4 py-2 border-b font-medium"><%= product.name %></td>
+          <td class="w-8 pl-4 py-2 border-b"><%= product.quantity %></td>
+          <td class="pl-4 py-2 border-b"><%= product.price %> zł</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

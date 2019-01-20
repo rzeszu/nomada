@@ -91,6 +91,10 @@
     font-weight: 500;
   }
 
+  td,th {
+    text-align: left !important;
+  }
+
   .title {
     font-family: 'Playfair Display', serif;
   }

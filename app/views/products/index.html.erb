@@ -39,7 +39,7 @@
       <div class="sm:w-full md:w-1/2 lg:w-1/3 px-3 pb-6">
         <div class="boxy">
         <% if product.file.attached? %>
-          <%= link_to product_path(product.id) do %>
+          <%= link_to product_path(product) do %>
             <% if product.available == true %>
               <%= image_tag product.file, class: "blurred" %>
             <% else %>
@@ -49,7 +49,7 @@
         <% end %>
         </div>
         <p class="text-center font-medium pt-4 pb-2 text-xl">
-          <%= link_to product_path(product.id) do %>
+          <%= link_to product_path(product) do %>
             <%= product.name %>
           <% end %>
         </p>
