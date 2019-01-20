@@ -18,7 +18,7 @@
 </div>
 
 <div class="flex mb-3">
-  <div class="inline-flex items-center">
+  <div class="inline-flex w-full items-center">
     <div class="flex-1 field mr-6">
       <label class="block text-sm mb-2">
         Cena
@@ -35,6 +35,10 @@
       <%= form.check_box :available, id: :product_available %>
       <label>
         Dostępne
+      </label>
+      <%= form.check_box :visible, id: :product_visible, class: "ml-3" %>
+      <label>
+        Widoczne
       </label>
     </div>
   </div>

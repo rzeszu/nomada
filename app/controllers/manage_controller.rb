@@ -3,4 +3,7 @@ class ManageController < ApplicationController
   def products
     @products = Product.all
   end
+  def countries
+    @countries = WhereFrom.all
+  end
 end

@@ -8,6 +8,7 @@ THATS ALL
 
 --> PRODUCT PAGE <--
 
+:visible true/false <-- jezeli produkt ma byc calkowicie niewidoczny
 
 --> ADMIN PAGE <--
 
@@ -17,12 +18,9 @@ Zamowienia - manage/orders
   -> Lista
   -> Statusy
 Slowniki - manage/fields
-<<<<<<< HEAD
-=======
   -> Zarządzanie
 
 --> BLOG <--
 
 CKEditor
 Galeria
->>>>>>> 1032c1c587bcc48b0ab922f0eba83c1d929d2894

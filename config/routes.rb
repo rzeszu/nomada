@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   resources :preferences
   resources :pages
   resource :manage
-  get 'manage/products' => 'manage#products'
   get 'manage/index' => 'manage#index'
+  get 'manage/products' => 'manage#products'
+  get 'manage/categories' => 'manage#categories'
+  get 'manage/countries' => 'manage#countries'
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

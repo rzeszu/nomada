@@ -4,8 +4,10 @@
 
 $(document).on "turbolinks:load", ->
 
-  $('.categories').selectize ->
-    return
+  $('.categories').selectize
+    plugins: [ 'remove_button' ]
+    delimiter: ','
+    persist: false
 
   $('.skad').selectize ->
     return

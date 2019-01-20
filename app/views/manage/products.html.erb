@@ -6,7 +6,7 @@
     <h1 class="block text-4xl mt-3 mb-10 font-medium text-center">
       Zarządzanie produktami
     </h1>
-    <%= link_to manage_index_path, class: "w-24 h-24 p-4 border rounded font-medium hover:text-blue-dark uppercase" do %>
+    <%= link_to manage_index_path, class: "w-24 h-24 p-4 border rounded font-medium hover:text-blue-dark hover:border-blue-light uppercase" do %>
       <i class="fas fa-undo mr-1"></i> Wróć
     <% end %>
   </div>
@@ -16,17 +16,26 @@
       <thead class="text-left">
         <tr>
           <th class="pb-4 w-8">#</th>
+          <th class="pb-4 w-8">#</th>
           <th class="w-12 pb-4">Zdjęcie</th>
           <th class="w-64 pl-4 pb-4">Nazwa</th>
           <th class="w-8 pl-4 pb-4">Ilość</th>
           <th class="pl-4 pb-4">Cena</th>
+          <th class="pl-4 pb-4">Akcje</th>
         </tr>
       </thead>
       <tbody class="text-left">
         <% @products.each do |product| %>
         <tr>
           <td class="border-b w-8 py-2">
-            <% if product.available %>
+            <% if product.visible == true %>
+              <i class="fas fa-eye"></i>
+            <% else %>
+              <i class="fas fa-eye-slash text-grey"></i>
+            <% end %>
+          </td>
+          <td class="border-b w-8 py-2">
+            <% if product.available == true %>
               <div class="w-4 h-4 rounded-full bg-green"></div>
             <% else %>
               <div class="w-4 h-4 rounded-full bg-red"></div>
@@ -36,6 +45,14 @@
           <td class="w-64 pl-4 py-2 border-b font-medium"><%= product.name %></td>
           <td class="w-8 pl-4 py-2 border-b"><%= product.quantity %></td>
           <td class="pl-4 py-2 border-b"><%= product.price %> zł</td>
+          <td class="pl-4 py-2 border-b">
+            <%= link_to edit_product_path(product), class: "bg-grey-lighter p-2 rounded text-grey-darker hover:bg-grey-light" do %>
+              <i class="fas fa-pen-square"></i>
+            <% end %>
+            <%= link_to product_path(product), method: :delete, class: "bg-grey-lighter ml-2 px-3 py-2 rounded text-grey-darker hover:bg-grey-light", data: { confirm: 'Ar ju siur?' } do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>
