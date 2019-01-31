@@ -23,6 +23,9 @@ $(document).on "turbolinks:load", ->
     parent = document.getElementById("big")
     $(parent).attr 'src', child
 
+  $('.dbac-open').on "click", (event) ->
+    $('.dbac-content').show()
+
   setTimeout (->
     $('#noticed').hide()
     return

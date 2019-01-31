@@ -61,6 +61,40 @@
   * @import "utilities/skew-transforms";
   */
 
+  .container-fluid {
+    width: 100%;
+  }
+
+  @screen sm {
+    .container-fluid {
+      max-width: 100%;
+    }
+  }
+
+  @screen md {
+    .container-fluid {
+      max-width: 668px;
+    }
+  }
+
+  @screen lg {
+    .container-fluid {
+      max-width: 992px;
+    }
+  }
+
+  @screen xl {
+    .container-fluid {
+      max-width: 1200px;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"], 
+  input[type="password"] {
+    -webkit-appearance: none;
+  }
+
   * {
     box-shadow: none !important;
   }
@@ -171,4 +205,8 @@
 
   .contacted {
     background-color: rgb(255, 255, 255, 0.7);
+  }
+
+  .btn-tag {
+    @apply inline-block px-3 py-2 border border-4 text-sm mr-1;
   }

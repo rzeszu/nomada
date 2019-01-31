@@ -9,29 +9,27 @@
       </ul>
     </div>
   <% end %>
-
-<div class="mb-3">
+  <!-- NAZWA -->
   <label class="block text-sm mb-2">
     Nazwa
   </label>
   <%= form.text_field :name, class: "border border-grey-light bg-white text-black inline-block w-full rounded p-3" %>
-</div>
 
-<div class="flex mb-3">
-  <div class="inline-flex w-full items-center">
-    <div class="flex-1 field mr-6">
+  <!-- CENA MAGAZYN DOSTEPNOSC -->
+  <div class="md:inline-flex w-full items-center">
+    <div class="flex-1 field sm:mt-3 md:mr-6">
       <label class="block text-sm mb-2">
         Cena
       </label>
       <%= form.number_field :price, class: "border border-grey-light bg-white text-black inline-block w-full rounded p-3" %>
     </div>
-    <div class="flex-1 field mr-6">
+    <div class="flex-1 field sm:mt-3 md:mr-6">
       <label class="block text-sm mb-2">
         Magazyn
       </label>
       <%= form.number_field :quantity, class: "border border-grey-light bg-white text-black inline-block w-full rounded p-3" %>
     </div>
-    <div class="flex-1 field mt-4">
+    <div class="flex-1 field mt-5">
       <%= form.check_box :available, id: :product_available %>
       <label>
         Dostępne
@@ -42,50 +40,52 @@
       </label>
     </div>
   </div>
-</div>
 
-<div class="flex mb-3">
-  <div class="flex-1 field mr-6">
-    <label class="block text-sm mb-1">
-      Kategoria
-    </label>
-    <%= form.select :category, Category.all.pluck(:name, :id), {}, { multiple: true, class: "w-full categories" } %>
+  <!-- KATEGORIA SKAD MATERIALY -->
+  <div class="sm:mt-4 md:mt-0 md:inline-flex w-full items-center">
+    <div class="flex-1 field sm:mt-3 md:mr-6">
+      <label class="block text-sm mb-2">
+        Kategoria
+      </label>
+      <%= form.select :category, Category.all.pluck(:name, :id), {}, { multiple: true, class: "w-full categories" } %>
+    </div>
+    <div class="flex-1 field sm:mt-3 md:mr-6">
+      <label class="block text-sm mb-2">
+        Skąd?
+      </label>
+      <%= form.collection_select(:where_from, WhereFrom.order("name ASC"), :id, :name, {:include_blank => ''}, { class: 'w-full skad' }) %>
+    </div>
+    <div class="flex-1 field sm:mt-3">
+      <label class="block text-sm mb-2">
+        Materiały
+      </label>
+      <%= form.select :material, Material.all.pluck(:name, :id), {}, { multiple: true, class: "w-full materials" } %>
+    </div>
   </div>
-  <div class="flex-1 field mr-6">
-    <label class="block text-sm mb-1">
-      Skąd?
-    </label>
-    <%= form.collection_select(:where_from, WhereFrom.order("name ASC"), :id, :name, {:include_blank => ''}, { class: 'w-full skad' }) %>
-  </div>
-  <div class="flex-1 field">
-    <label class="block text-sm mb-1">
-      Materiały
-    </label>
-    <%= form.select :material, Material.all.pluck(:name, :id), {}, { multiple: true, class: "w-full materials" } %>
-  </div>
-</div>
 
-  <div class="field mb-3">
-    <label class="block text-sm mb-1">
+  <!-- OPIS -->
+  <div class="sm:mt-3">
+    <label class="block text-sm mb-2">
       Opis
     </label>
     <%= form.text_area :description, rows: "10", id: :product_description, class: "border border-grey-light bg-white text-black inline-block w-full rounded p-3" %>
   </div>
 
-<div class="flex mb-3">
-  <div class="flex-1 field mr-6">
-    <label class="block text-sm mb-1">
-      Kolor
-    </label>
-    <%= form.select :color, Color.all.pluck(:name, :id), {}, { multiple: true, class: "w-full colors" } %>
+  <!-- KOLOR JAK DBAC -->
+  <div class="md:inline-flex w-full items-center">
+    <div class="flex-1 field sm:mt-3 md:mr-6">
+      <label class="block text-sm mb-2">
+        Kolor
+      </label>
+      <%= form.select :color, Color.all.pluck(:name, :id), {}, { multiple: true, class: "w-full colors" } %>
+    </div>
+    <div class="flex-1 field sm:mt-3">
+      <label class="block text-sm mb-2">
+        Jak dbać?
+      </label>
+      <%= form.collection_select(:care, WhereFrom.order("name ASC"), :id, :name, {:include_blank => ''}, { class: 'w-full skad' }) %>
+    </div>
   </div>
-  <div class="flex-1 field">
-    <label class="block text-sm mb-1">
-      Jak dbać?
-    </label>
-    <%= form.collection_select(:care, WhereFrom.order("name ASC"), :id, :name, {:include_blank => ''}, { class: 'w-full skad' }) %>
-  </div>
-</div>
 
   <% if @product.file.attached? %>
     <div class="w-48 h-48 mb-4">

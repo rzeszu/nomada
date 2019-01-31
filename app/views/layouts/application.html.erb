@@ -36,12 +36,29 @@
       </div>
     </div>
     <% end %>
-    <!-- LOGO -->
-    <div class="sm:block md:hidden justify-center text-center my-4">
-      <%= image_tag "aura.jpg", class: "w-24" %>
+    <!-- MOBILE -->
+    <div class="flex flex-row sm:mx-6 items-center md:hidden my-6 justify-center">
+      <div class="w-1/3 block"><%= image_tag "menu.png", class: "w-6 menu-open" %></div>
+      <div class="w-1/3 block text-center"><%= image_tag "aura.jpg", class: "w-20" %></div>
+      <div class="w-1/3 block"></div>
+    </div>
+    <!-- MOBILE MENU -->
+    <div class="menu-mobile absolute p-6 pin bg-white z-50" style="display: none;">
+      <div class="flex flex-row items-center">
+        <div class="w-1/3 block"><%= image_tag "menu-close.png", class: "w-6 menu-close" %></div>
+        <div class="w-1/3 block text-center"><%= image_tag "aura.jpg", class: "w-20" %></div>
+        <div class="w-1/3 block"></div>
+      </div>
+      <div class="mt-10 ml-8 text-lg font-medium">
+        <p class="mb-2">Blog</p>
+        <p class="mb-2">Sklep</p>
+        <p class="mb-2">Jurta</p>
+        <p class="mb-2">O nas</p>
+        <p class="mb-2">Kontakt</p>
+      </div>
     </div>
     <!-- MENU -->
-    <header class="bg-white sm:border-t md:border-t-0 md:border-b">
+    <header class="bg-white sm:hidden md:block md:border-t-0 md:border-b">
       <div class="container mx-auto px-6">
         <nav class="flex sm:py-4 md:py-8 justify-center font-normal bg-white uppercase">
           <div class="md:w-1/3 md:text-right self-center">

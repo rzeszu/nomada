@@ -15,3 +15,13 @@
 //= require selectize
 //= require turbolinks
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+
+  $('.menu-open').on("click", function() {
+    $(".menu-mobile").show();
+  });
+  $('.menu-close').on("click", function() {
+    $(".menu-mobile").hide();
+  });
+});
