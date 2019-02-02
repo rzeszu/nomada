@@ -1,6 +1,6 @@
-<div class="container mx-auto sm:px-2 md:px-6">
+<div class="container-fluid mx-auto sm:px-6">
   <!-- INFO -->
-  <div class="mt-12 mx-4 text-center">
+  <div class="mt-6 text-center">
     <div class="inline-block w-6 h-1 bg-logo-cyan"></div>
     <div class="inline-block w-6 h-1 bg-logo-orange"></div>
     <h1 class="block text-4xl mt-3 mb-6 font-medium text-center">
@@ -12,8 +12,8 @@
     </p>
   </div>
   <!-- 1 RZAD -->
-  <div class="flex mt-12 mx-4">
-    <%= link_to manage_products_path, class: "w-1/3 mr-6 p-6 border rounded hover:text-blue-dark hover:border-blue-light" do %>
+  <div class="flex flex-col mt-12">
+    <%= link_to manage_products_path, class: "sm:block md:w-1/3 sm:mb-6 md:mr-6 p-6 border rounded hover:text-blue-dark hover:border-blue-light" do %>
       <span class="text-3xl font-medium">
         <i class="far fa-list-alt mr-1"></i>
         Produkty
@@ -23,7 +23,7 @@
         Tu i teraz.
       </p>
     <% end %>
-    <%= link_to manage_categories_path, class: "w-1/3 mr-6 p-6 border rounded hover:text-blue-dark hover:border-blue-light" do %>
+    <%= link_to manage_categories_path, class: "sm:block md:w-1/3 sm:mb-6 md:mr-6 p-6 border rounded hover:text-blue-dark hover:border-blue-light" do %>
       <span class="text-3xl font-medium">
         <i class="far fa-star"></i>
         Kategorie
@@ -33,7 +33,7 @@
         Podkategorie też.
       </p>
     <% end %>
-    <%= link_to manage_countries_path, class: "w-1/3 p-6 border rounded hover:text-blue-dark hover:border-blue-light" do %>
+    <%= link_to manage_countries_path, class: "sm:block md:w-1/3 sm:mb-6 p-6 border rounded hover:text-blue-dark hover:border-blue-light" do %>
       <span class="text-3xl font-medium">
         <i class="far fa-flag mr-1"></i>
         Kraje
@@ -45,8 +45,8 @@
     <% end %>
   </div>
   <!-- 2 RZAD -->
-  <div class="flex mt-6 mb-12 mx-4">
-    <div class="w-1/3 mr-6 p-6 border rounded">
+  <div class="flex flex-col md:mt-6">
+    <div class="sm:block md:w-1/3 md:mr-6 sm:mb-6 p-6 border rounded">
       <span class="text-3xl font-medium">
         <i class="far fa-gem"></i>
         Materiały
@@ -56,7 +56,7 @@
         Same najlepsze.
       </p>
     </div>
-    <div class="w-1/3 mr-6 p-6 border rounded">
+    <div class="sm:block md:w-1/3 md:mr-6 p-6 border rounded">
       <span class="text-3xl font-medium">
         <i class="far fa-hand-peace"></i>
         Jak dbać?

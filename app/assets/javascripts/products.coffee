@@ -24,7 +24,13 @@ $(document).on "turbolinks:load", ->
     $(parent).attr 'src', child
 
   $('.dbac-open').on "click", (event) ->
-    $('.dbac-content').show()
+    $('.dbac-content').animate
+      opacity: 'toggle'
+      height: 'toggle'
+
+  $('.categories-open').on "click", (event) ->
+    $('.categories-open').hide()
+    $('.more-categories').fadeIn("400")
 
   setTimeout (->
     $('#noticed').hide()

@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'fontawesome', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=latin-ext" rel="stylesheet">
@@ -15,7 +17,7 @@
   <body class="font-body leading-tight">
     <!-- PANEL ADMINA -->
     <% if admin_signed_in? %>
-    <div class="border-b bg-grey-lightest">
+    <div class="sm:hidden md:block border-b bg-grey-lightest">
       <div class="flex container mx-auto text-center py-4 font-normal md:justify-center">
         <div class="w-1/6 text-left sm:hidden"></div>
         <div class="sm:w-full md:w-2/3 self-center text-center">
@@ -36,31 +38,49 @@
       </div>
     </div>
     <% end %>
-    <!-- MOBILE -->
-    <div class="flex flex-row sm:mx-6 items-center md:hidden my-6 justify-center">
+    <!-- MOBILE TOP -->
+    <div class="flex flex-row sm:px-6 md:px-10 items-center lg:hidden sm:my-6 md:my-8 justify-center">
       <div class="w-1/3 block"><%= image_tag "menu.png", class: "w-6 menu-open" %></div>
-      <div class="w-1/3 block text-center"><%= image_tag "aura.jpg", class: "w-20" %></div>
+      <div class="w-1/3 block text-center">
+        <%= link_to products_path do %>
+          <%= image_tag "aura.jpg", class: "sm:w-20 md:w-24" %>
+        <% end %>
+      </div>
       <div class="w-1/3 block"></div>
     </div>
     <!-- MOBILE MENU -->
-    <div class="menu-mobile absolute p-6 pin bg-white z-50" style="display: none;">
-      <div class="flex flex-row items-center">
-        <div class="w-1/3 block"><%= image_tag "menu-close.png", class: "w-6 menu-close" %></div>
-        <div class="w-1/3 block text-center"><%= image_tag "aura.jpg", class: "w-20" %></div>
-        <div class="w-1/3 block"></div>
+    <div class="menu-mobile overflow-hidden mb-6 bg-white" style="display: none;">
+      <div class="py-5 pl-12 border-t border-b text-xl font-medium">
+        <p class="mb-3">Blog</p>
+        <p class="mb-3">Sklep</p>
+        <p class="mb-3">Jurta</p>
+        <p class="mb-3">O nas</p>
+        <p>Kontakt</p>
       </div>
-      <div class="mt-10 ml-8 text-lg font-medium">
-        <p class="mb-2">Blog</p>
-        <p class="mb-2">Sklep</p>
-        <p class="mb-2">Jurta</p>
-        <p class="mb-2">O nas</p>
-        <p class="mb-2">Kontakt</p>
-      </div>
+      <% if admin_signed_in? %>
+        <div class="py-5 pl-12 border-b text-xl font-medium">
+          <p class="mb-3">
+            <%= link_to new_product_path do %>
+              <i class="fas fa-plus text-lg mr-2"></i>Dodaj produkt
+            <% end %>
+          </p>
+          <p class="mb-3">
+            <%= link_to manage_index_path do %>
+              <i class="fas fa-sliders-h text-lg mr-2"></i>Zarządzaj
+            <% end %>
+          </p>
+          <p>
+            <%= link_to destroy_admin_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt text-lg mr-2"></i>Wyloguj
+            <% end %>
+          </p>
+        </div>
+      <% end %>
     </div>
-    <!-- MENU -->
-    <header class="bg-white sm:hidden md:block md:border-t-0 md:border-b">
+    <!-- DESKTOP MENU -->
+    <header class="bg-white sm:hidden lg:block">
       <div class="container mx-auto px-6">
-        <nav class="flex sm:py-4 md:py-8 justify-center font-normal bg-white uppercase">
+        <nav class="flex py-8 justify-center font-normal bg-white uppercase">
           <div class="md:w-1/3 md:text-right self-center">
             <%= link_to "Sklep", products_path, class: "inline-block font-medium sm:mr-6 md:mr-12" %>
             <%= link_to "Jurta", products_path, class: "inline-block sm:mr-6 md:mr-0" %></div>
@@ -90,6 +110,22 @@
     <% end %>
 
     <%= yield %>
+
+    <div class="lg:hidden flex flex-col mt-6 py-6 bg-grey-lightest border-t items-center justify-center text-xl">
+      <div class="block text-2xl text-grey-dark mb-4">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div class="block mb-2 text-grey-darker">Blog</div>
+      <div class="block mb-2 text-grey-darker font-medium">Sklep</div>
+      <div class="block text-grey-darker">Kontakt</div>
+      <div class="block mt-4 text-3xl text-grey-dark">
+        <i class="fab fa-facebook-square mr-1 text-blue-dark"></i>
+        <i class="fab fa-instagram text-pink-dark"></i>
+      </div>
+      <div class="block mt-4 text-sm text-grey-darker">
+        <i class="far fa-copyright mr-1 text-xs"></i>2019 Aura Good
+      </div>
+    </div>
 
   </body>
 </html>

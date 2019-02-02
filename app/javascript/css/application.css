@@ -61,29 +61,57 @@
   * @import "utilities/skew-transforms";
   */
 
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('../../../vendor/assets/fonts/Quicksand-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('../../../vendor/assets/fonts/Quicksand-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('../../../vendor/assets/fonts/Quicksand-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('../../../vendor/assets/fonts/Quicksand-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
   .container-fluid {
     width: 100%;
   }
 
-  @screen sm {
+  @media(min-width: 375px) {
     .container-fluid {
       max-width: 100%;
     }
   }
 
-  @screen md {
+  @media(min-width: 668px) {
     .container-fluid {
-      max-width: 668px;
+      max-width: 100%;
     }
   }
 
-  @screen lg {
+  @media(min-width: 992px) {
     .container-fluid {
       max-width: 992px;
     }
   }
 
-  @screen xl {
+  @media(min-width: 1200px) {
     .container-fluid {
       max-width: 1200px;
     }
@@ -100,8 +128,7 @@
   }
 
   html {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-family: 'Quicksand';
   }
 
   a {
@@ -205,8 +232,4 @@
 
   .contacted {
     background-color: rgb(255, 255, 255, 0.7);
-  }
-
-  .btn-tag {
-    @apply inline-block px-3 py-2 border border-4 text-sm mr-1;
   }
