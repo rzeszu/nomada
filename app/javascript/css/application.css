@@ -61,6 +61,9 @@
   * @import "utilities/skew-transforms";
   */
 
+  .post-title {
+    font-family: 'Merriweather', serif;
+  }
   @font-face {
     font-family: 'Quicksand';
     src: url('../../../vendor/assets/fonts/Quicksand-Light.ttf') format('truetype');
@@ -128,7 +131,7 @@
   }
 
   html {
-    font-family: 'Quicksand';
+    font-family: 'Raleway', sans-serif;
   }
 
   a {
@@ -154,6 +157,14 @@
 
   td,th {
     text-align: left !important;
+  }
+
+  .post-thumbnail {
+    overflow:hidden;
+  }
+
+  .post-thumbnail img {
+    min-width: 100%;
   }
 
   .title {

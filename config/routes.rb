@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'pages/contact' => 'pages#contact'
   get 'pages/download' => 'pages#download'
   devise_for :admins, path: 'admins'
-  root "products#index"
+  root "posts#index"
   resources :products do
     resources :images, :only => [:create, :destroy]
   end
