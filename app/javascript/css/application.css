@@ -61,9 +61,7 @@
   * @import "utilities/skew-transforms";
   */
 
-  .post-title {
-    font-family: 'Merriweather', serif;
-  }
+
   @font-face {
     font-family: 'Quicksand';
     src: url('../../../vendor/assets/fonts/Quicksand-Light.ttf') format('truetype');
