@@ -24,13 +24,13 @@ gem 'webpacker'
 gem 'tailwindcss', '~> 0.2.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "selectize-rails"
-gem "mini_magick"
 gem "table_print"
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
 gem 'mail_form'
 gem 'yaml_db'
 gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
+gem 'image_processing', '~> 1.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

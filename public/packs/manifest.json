@@ -1,11 +1,11 @@
 {
-  "_\\_\\vendor\\assets\\fonts\\Quicksand-Bold.ttf": "/packs/_/_/vendor/assets/fonts/Quicksand-Bold-166b7283b0af2b96287c91e6c6a0dc73.ttf",
-  "_\\_\\vendor\\assets\\fonts\\Quicksand-Light.ttf": "/packs/_/_/vendor/assets/fonts/Quicksand-Light-043a37371ee14e929d993990a3ad18db.ttf",
-  "_\\_\\vendor\\assets\\fonts\\Quicksand-Medium.ttf": "/packs/_/_/vendor/assets/fonts/Quicksand-Medium-6080ccc3a807724b6ff10b7b609137da.ttf",
-  "_\\_\\vendor\\assets\\fonts\\Quicksand-Regular.ttf": "/packs/_/_/vendor/assets/fonts/Quicksand-Regular-f46f486edefeba66ac4b538dd593d656.ttf",
+  "_\\_\\vendor\\assets\\fonts\\Raleway-Light.ttf": "/packs/_/_/vendor/assets/fonts/Raleway-Light-b1bdea561f247adc2c904f5b24a07c51.ttf",
+  "_\\_\\vendor\\assets\\fonts\\Raleway-Medium.ttf": "/packs/_/_/vendor/assets/fonts/Raleway-Medium-430a0518f5ff3b6c8968b759a29b36e2.ttf",
+  "_\\_\\vendor\\assets\\fonts\\Raleway-Regular.ttf": "/packs/_/_/vendor/assets/fonts/Raleway-Regular-580d0778ad254335be45bf58bb449f43.ttf",
+  "_\\_\\vendor\\assets\\fonts\\Raleway-SemiBold.ttf": "/packs/_/_/vendor/assets/fonts/Raleway-SemiBold-17ba6410cbc694808961a988fd4426de.ttf",
   "_\\assets\\images\\contact.jpg": "/packs/_/assets/images/contact-dcd05eeb100d24914511fe8714d734bd.jpg",
-  "application.css": "/packs/application-8e36bd650b79d40d65c2558569459b74.css",
-  "application.css.map": "/packs/application-8e36bd650b79d40d65c2558569459b74.css.map",
+  "application.css": "/packs/application-7f5cd5d46b66d41080d78b2e7f8ecd43.css",
+  "application.css.map": "/packs/application-7f5cd5d46b66d41080d78b2e7f8ecd43.css.map",
   "application.js": "/packs/application-059a31bbbe4c2e9b56d6.js",
   "application.js.map": "/packs/application-059a31bbbe4c2e9b56d6.js.map"
 }

@@ -6,7 +6,6 @@ module ApplicationHelper
     	""
     end
   end
-
   def active(path)
     if params[:show].to_i == path
       "font-medium border-black "

@@ -49,7 +49,7 @@ let colors = {
   'logo-orange': '#f89c4f',
   'logo-cyan': '#a2d8e7',
 
-  'black': '#22292f',
+  'black': '#292827',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',

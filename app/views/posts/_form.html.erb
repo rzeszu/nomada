@@ -1,74 +1,72 @@
-<div class="container-fluid mx-auto md:mt-2 sm:px-6 md:px-10">
-  <%= form_with(model: post, local: true) do |form| %>
-    <% if post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-        <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <%= form.label :image_primary %>
-      <%= form.file_field :image_primary %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image_description %>
-      <%= form.text_field :image_description %>
-    </div>
-
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-
-    <div class="field">
-      <%= form.label :date %>
-      <%= form.date_select :date %>
-    </div>
-
-    <div class="field">
-      <%= form.label :local %>
-      <%= form.text_field :local %>
-    </div>
-
-    <div class="field">
-      <%= form.label :subtitle %>
-      <%= form.text_area :subtitle %>
-    </div>
-
-    <div class="field">
-      <%= form.label :content %>
-      <%= form.rich_text_area :content %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image_two %>
-      <%= form.file_field :image_two %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image_three %>
-      <%= form.file_field :image_three %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image_four %>
-      <%= form.file_field :image_four %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image_five %>
-      <%= form.file_field :image_five %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+
+  <div class="field">
+    <%= form.label :image_primary %>
+    <%= form.file_field :image_primary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_description %>
+    <%= form.text_field :image_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :local %>
+    <%= form.text_field :local %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtitle %>
+    <%= form.text_area :subtitle %>
+  </div>
+
+  <div class="field" style="max-height: 600px; overflow: scroll;">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_two %>
+    <%= form.file_field :image_two %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_three %>
+    <%= form.file_field :image_three %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_four %>
+    <%= form.file_field :image_four %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_five %>
+    <%= form.file_field :image_five %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
