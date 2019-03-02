@@ -21,16 +21,21 @@ gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# My gems
 gem 'tailwindcss', '~> 0.2.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "selectize-rails"
-gem "table_print"
 gem 'devise'
-gem 'will_paginate', '~> 3.1.0'
-gem 'mail_form'
-gem 'yaml_db'
 gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
 gem 'image_processing', '~> 1.2'
+
+# Dev's help
+gem "table_print"
+gem 'yaml_db'
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

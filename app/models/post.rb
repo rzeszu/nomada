@@ -10,15 +10,15 @@ class Post < ApplicationRecord
     @file = file
     if destination == "grid"
       if scale == 1
-        return @file.variant(combine_options: { resize:"1120x#{size}", extent: "668x668", background: "grey", gravity: "center" })
+        return @file.variant(combine_options: { resize:"1120x#{size}", extent: "340x340", background: "grey", gravity: "center" })
       else
-        return @file.variant(combine_options: { resize:"2240x#{2*size}", extent: "#{size}x#{size}", background: "grey", gravity: "center" })
+        return @file.variant(combine_options: { resize:"2240x#{2*size}", extent: "668x668", background: "grey", gravity: "center" })
       end
     elsif destination == "post"
       if scale == 1
-        return @file.variant(resize:"1120x#{size}")
+        return @file.variant(resize:"#{size}x#{size}")
       else
-        return @file.variant(resize:"2240x#{size}")
+        return @file.variant(resize:"#{2*size}x#{2*size}")
       end
     end
   end

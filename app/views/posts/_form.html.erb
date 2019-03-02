@@ -1,72 +1,95 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="mt-6">
+  <%= form_with(model: post, local: true) do |form| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label "Tytuł", class: "block" %>
+      <%= form.text_field :title, class: "border border-grey-light" %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Data", class: "block" %>
+      <%= form.date_select :date %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Miejsce", class: "block" %>
+      <%= form.text_field :local %>
+    </div>
+
+    <div class="field" style="max-height: 600px; overflow: scroll;">
+      <%= form.label "Treść", class: "block" %>
+      <%= form.rich_text_area :content %>
+    </div>
+
+    <div class="block mb-6 p-6 border border-grey">
+      <div class="field image-field">
+      <%= form.label "Zdjęcie główne", class: "block" %>
+        <%= form.file_field :image_primary, class: "" %>
+      </div>
+
+      <div class="field" style="margin-bottom: 0px !important;">
+        <%= form.label "Opis zdjęcia", class: "block" %>
+        <%= form.text_field :image_description %>
+      </div>
+    </div>
+
+    <div class="block mb-6 p-6 border border-grey">
+      <div class="field">
+        <%= form.label "Zdjęcie nr 2", class: "block" %>
+        <%= form.file_field :image_two %>
+      </div>
+      <div class="field" style="margin-bottom: 0px !important;">
+        <%= form.label "Opis nr 2", class: "block" %>
+        <%= form.text_field :subtitle_two %>
+      </div>
+    </div>
+
+    <div class="block mb-6 p-6 border border-grey">
+      <div class="field">
+        <%= form.label "Zdjęcie nr 3", class: "block" %>
+        <%= form.file_field :image_three %>
+      </div>
+      <div class="field" style="margin-bottom: 0px !important;">
+        <%= form.label "Opis nr 3", class: "block" %>
+        <%= form.text_field :subtitle_three %>
+      </div>
+    </div>
+
+    <div class="block mb-6 p-6 border border-grey">
+      <div class="field">
+        <%= form.label "Zdjęcie nr 4", class: "block" %>
+        <%= form.file_field :image_four %>
+      </div>
+      <div class="field" style="margin-bottom: 0px !important;">
+        <%= form.label "Opis nr 4", class: "block" %>
+        <%= form.text_field :subtitle_four %>
+      </div>
+    </div>
+
+    <div class="block mb-6 p-6 border border-grey">
+      <div class="field">
+        <%= form.label "Zdjęcie nr 5", class: "block" %>
+        <%= form.file_field :image_five %>
+      </div>
+      <div class="field" style="margin-bottom: 0px !important;">
+        <%= form.label "Opis nr 5", class: "block" %>
+        <%= form.text_field :subtitle_five %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :image_primary %>
-    <%= form.file_field :image_primary %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_description %>
-    <%= form.text_field :image_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :local %>
-    <%= form.text_field :local %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subtitle %>
-    <%= form.text_area :subtitle %>
-  </div>
-
-  <div class="field" style="max-height: 600px; overflow: scroll;">
-    <%= form.label :content %>
-    <%= form.rich_text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_two %>
-    <%= form.file_field :image_two %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_three %>
-    <%= form.file_field :image_three %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_four %>
-    <%= form.file_field :image_four %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_five %>
-    <%= form.file_field :image_five %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

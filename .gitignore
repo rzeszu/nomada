@@ -1,3 +1,4 @@
+/storage/*
 *.rbc
 capybara-*.html
 .rspec

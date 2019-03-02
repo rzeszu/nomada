@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   resources :posts
-  get 'pages/contact' => 'pages#contact'
-  get 'pages/download' => 'pages#download'
+  get 'about', to: 'pages#about'
+  get 'shop', to: 'pages#shop'
+  get 'contact', to: 'pages#contact'
+  get 'yurt', to: 'pages#yurt'
+  get 'care', to: 'pages#care'
   devise_for :admins, path: 'admins'
   root "posts#index"
   resources :products do
