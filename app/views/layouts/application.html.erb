@@ -60,7 +60,7 @@
             <%= link_to 'Kontakt', contact_path %>
           </p>
           <% if admin_signed_in? %>
-          <p>
+          <p class="mt-3">
             <%= link_to destroy_admin_session_path, method: :delete do %>
               Wyloguj
             <% end %>
