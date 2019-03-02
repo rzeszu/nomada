@@ -59,6 +59,13 @@
           <p>
             <%= link_to 'Kontakt', contact_path %>
           </p>
+          <% if admin_signed_in? %>
+          <p>
+            <%= link_to destroy_admin_session_path, method: :delete do %>
+              Wyloguj
+            <% end %>
+          </p>
+          <% end %>
           <div class="mt-8">
             <a href="https://www.facebook.com/AuraNomada/" target="_blank">
               <i class="fab fa-facebook-square mr-2"></i>
@@ -69,26 +76,6 @@
           </div>
         </div>
       </div>
-      
-      <% if admin_signed_in? %>
-        <div class="py-5 pl-12 border-b text-xl font-medium">
-          <p class="mb-3">
-            <%= link_to new_product_path do %>
-              <i class="fas fa-plus text-lg mr-2"></i>Dodaj produkt
-            <% end %>
-          </p>
-          <p class="mb-3">
-            <%= link_to manage_index_path do %>
-              <i class="fas fa-sliders-h text-lg mr-2"></i>Zarządzaj
-            <% end %>
-          </p>
-          <p>
-            <%= link_to destroy_admin_session_path, method: :delete do %>
-              <i class="fas fa-sign-out-alt text-lg mr-2"></i>Wyloguj
-            <% end %>
-          </p>
-        </div>
-      <% end %>
     </div>
 
     <!-- POWIADOMIENIA -->
