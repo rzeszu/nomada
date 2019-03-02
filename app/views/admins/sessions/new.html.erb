@@ -5,11 +5,9 @@
       <span class="block sm:inline sm:px-4"><%= notice %> <%= alert %></span>
     </div>
   <% end %>
-  <h2 class="text-3xl mb-4 font-medium">Logowanie</h2>
-  <!-- NOTICE -->
-  <p class="mb-4 text-sm text-grey-dark leading-normal">
-    Jeżeli jesteś adminem to jedziesz z logowaniem.<br/>W innym wypadku idziesz z buta.
-  </p>
+  <h1 class="md:px-0 mb-6 font-bold" id="title-mobile" style="line-height: 1.3;">
+    Panel Nomada
+  </h1>
   <!-- FIELDS -->
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field mb-3">
